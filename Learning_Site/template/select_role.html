@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Role</title>
+    <style>
+        /* General Reset */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9; /* Neutral background */
+        }
+
+        /* Main Container */
+        .select-role-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #f5efe6 0%, #e3dbc5 100%);
+            color: #333;
+        }
+
+        /* Title Styling */
+        .title {
+            font-size: 2.8rem;
+            font-weight: bold;
+            color: #4a3f35; /* Earthy color for educational tone */
+            margin-bottom: 30px;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Add a Book Icon to Title */
+        .title::before {
+            content: "📚";
+            font-size: 2.5rem;
+            margin-right: 10px;
+        }
+
+        /* Button Container */
+        .role-buttons {
+            display: flex;
+            gap: 30px;
+        }
+
+        /* Book-Shaped Buttons */
+        .role-btn {
+            padding: 20px 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #fff;
+            background: linear-gradient(145deg, #8e44ad, #6f3a91); /* Vibrant purple gradient */
+            border: none;
+            border-radius: 15px 15px 5px 5px; /* Book-like rounded corners */
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        /* Book Spine Effect */
+        .role-btn::before {
+            content: "";
+            position: absolute;
+            left: -15px;
+            top: 0;
+            bottom: 0;
+            width: 10px;
+            background-color: #5e3370; /* Darker shade for spine */
+            border-radius: 15px 0 0 15px;
+        }
+
+        .role-btn:hover {
+            background: linear-gradient(145deg, #6f3a91, #8e44ad); /* Reverse gradient on hover */
+            transform: translateY(-5px);
+        }
+
+        /* Footer Text */
+        .footer {
+            margin-top: 40px;
+            font-size: 1rem;
+            color: #4a3f35;
+        }
+
+        .footer a {
+            color: #8e44ad;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Background with Books */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://cdn.pixabay.com/photo/2015/11/19/18/44/books-1052014_960_720.jpg') no-repeat center center;
+            background-size: cover;
+            opacity: 0.1; /* Subtle opacity for a light background effect */
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <div class="select-role-container">
+        <h1 class="title">I want to join as</h1>
+        <div class="role-buttons">
+            <!-- Learner Role -->
+            <form method="POST" style="display: inline;">
+                {% csrf_token %}
+                <button type="submit" name="role" value="learner" class="role-btn">Learner</button>
+            </form>
+
+            <!-- Instructor Role -->
+            <form method="POST" style="display: inline;">
+                {% csrf_token %}
+                <button type="submit" name="role" value="instructor" class="role-btn">Instructor</button>
+            </form>
+
+            <!-- Admin Role -->
+            <form method="POST" style="display: inline;">
+                {% csrf_token %}
+                <button type="submit" name="role" value="admin" class="role-btn">Admin</button>
+            </form>
+        </div>
+        <div class="footer">
+            Not sure about your role? <a href="#">Learn More</a>
+        </div>
+    </div>
+</body>
+</html>

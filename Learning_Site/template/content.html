@@ -1,0 +1,87 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block content344 %}
+<div class="container">
+    <div class="row">
+        <!-- Row 1 - Paid Courses -->
+        <div class="col-md-4" style="position: relative; border: 1px solid #000; padding: 100px;">
+            <video controls class="video-size w-100" poster="{% static 'Title/AI.png' %}" style="display: none;">
+                <source src="{% static 'Videos/video1.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <img src="{% static 'Title/AI.png' %}" class="cover-image w-100" alt="Cover" onclick="playVideo(this)">
+            <!-- Subscription Button -->
+            <button class="btn btn-primary subscription-btn" onclick="subscribeToCourse('AI', 'paid')">Subscribe</button>
+        </div>
+        
+        <div class="col-md-4" style="position: relative; border: 1px solid #000; padding: 100px;">
+            <video controls class="video-size w-100" poster="{% static 'Title/DBMS.png' %}" style="display: none;">
+                <source src="{% static 'Videos/video2.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <img src="{% static 'Title/DBMS.png' %}" class="cover-image w-100" alt="Cover" onclick="playVideo(this)">
+            <!-- Subscription Button -->
+            <button class="btn btn-primary subscription-btn" onclick="subscribeToCourse('DBMS', 'paid')">Subscribe</button>
+        </div>
+        
+        <div class="col-md-4" style="position: relative; border: 1px solid #000; padding: 100px;">
+            <video controls class="video-size w-100" poster="{% static 'Title/DS.png' %}" style="display: none;">
+                <source src="{% static 'Videos/video3.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <img src="{% static 'Title/DS.png' %}" class="cover-image w-100" alt="Cover" onclick="playVideo(this)">
+            <!-- Subscription Button -->
+            <button class="btn btn-primary subscription-btn" onclick="subscribeToCourse('DS', 'paid')">Subscribe</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Row 2 - Unpaid Courses -->
+        <div class="col-md-4" style="position: relative; border: 1px solid #000; padding: 100px;">
+            <video controls class="video-size w-100" poster="{% static 'Title/DSA.png' %}" style="display: none;">
+                <source src="{% static 'Videos/video4.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <img src="{% static 'Title/DSA.png' %}" class="cover-image w-100" alt="Cover" onclick="playVideo(this)">
+            <!-- Subscription Button -->
+            <button class="btn btn-primary subscription-btn" onclick="subscribeToCourse('DSA', 'unpaid')">Subscribe</button>
+        </div>
+        
+        <div class="col-md-4" style="position: relative; border: 1px solid #000; padding: 100px;">
+            <video controls class="video-size w-100" poster="{% static 'Title/OOP.png' %}" style="display: none;">
+                <source src="{% static 'Videos/video5.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <img src="{% static 'Title/OOP.png' %}" class="cover-image w-100" alt="Cover" onclick="playVideo(this)">
+            <!-- Subscription Button -->
+            <button class="btn btn-primary subscription-btn" onclick="subscribeToCourse('OOP', 'unpaid')">Subscribe</button>
+        </div>
+        
+        <div class="col-md-4" style="position: relative; border: 1px solid #000; padding: 100px;">
+            <video controls class="video-size w-100" poster="{% static 'Title/SE.png' %}" style="display: none;">
+                <source src="{% static 'Videos/video6.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <img src="{% static 'Title/SE.png' %}" class="cover-image w-100" alt="Cover" onclick="playVideo(this)">
+            <!-- Subscription Button -->
+            <button class="btn btn-primary subscription-btn" onclick="subscribeToCourse('SE', 'unpaid')">Subscribe</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function playVideo(cover) {
+        const video = cover.previousElementSibling;
+        cover.style.display = 'none';
+        video.style.display = 'block';
+        video.play();
+    }
+
+    function subscribeToCourse(courseName, courseType) {
+        console.log("Subscribe button clicked for course: " + courseName + " (Type: " + courseType + ")");
+        window.location.href = "/student/subscribe/" + courseName + "/" + courseType + "/";
+    }
+</script>
+
+{% endblock %}

@@ -1,0 +1,104 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block subscribe_form %}
+
+{% if subscription_success %}
+<div class="container mt-5 sub">
+    <h2>Subscription Successful!</h2>
+    <p>Thank you for subscribing to {{ course_name }}.</p>
+</div>
+{% else %}
+<div class="sub">
+    <div class="container  ">
+        <h2>Subscribe to {{ course_name }}</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="mb-3">
+                {{ form.user.label_tag }}
+                {{ form.user }}
+            </div>
+
+            <!-- Full Name Field -->
+            <div class="mb-3">
+                {{ form.full_name.label_tag }}
+                {{ form.full_name }}
+            </div>
+
+            <!-- Email Field -->
+            <div class="mb-3">
+                {{ form.email.label_tag }}
+                {{ form.email }}
+            </div>
+
+            <!-- Date of Birth Field -->
+            <div class="mb-3">
+                {{ form.date_of_birth.label_tag }}
+                {{ form.date_of_birth }}
+            </div>
+
+            <!-- Course Name Field -->
+            <div class="mb-3">
+                <label for="id_course_name">Course Name</label>
+                <input type="text" name="course_name" value="{{ course_name }}" class="form-control" id="id_course_name"
+                    readonly>
+            </div>
+
+            <!-- Course Type Dropdown -->
+            <div class="mb-3">
+                <label for="id_type">Course Type</label>
+                {{ form.type }}
+            </div>
+
+            <!-- Payment Method -->
+            <div class="mb-3 d-none" id="payment-method-container">
+                <label for="id_payment_method">Payment Method</label>
+                {{ form.payment_method }}
+                {% if form.payment_method.errors %}
+                <div class="text-danger">
+                    {{ form.payment_method.errors.as_text }}
+                </div>
+                {% endif %}
+            </div>
+
+            <!-- Payment Screenshot Field -->
+            <div class="mb-3 d-none" id="payment-screenshot-container">
+                <label for="id_payment_screenshot">Payment Screenshot</label>
+                {{ form.payment_screenshot }}
+                {% if form.payment_screenshot.errors %}
+                <div class="text-danger">
+                    {{ form.payment_screenshot.errors.as_text }}
+                </div>
+                {% endif %}
+            </div>
+
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+    </div>
+</div>
+{% endif %}
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const typeField = document.getElementById('id_type');
+        const paymentMethodContainer = document.getElementById('payment-method-container');
+        const paymentScreenshotContainer = document.getElementById('payment-screenshot-container');
+
+        function togglePaymentFields() {
+            if (typeField.value.toLowerCase() === 'paid') {
+                paymentMethodContainer.classList.remove('d-none');
+                paymentScreenshotContainer.classList.remove('d-none');
+            } else {
+                paymentMethodContainer.classList.add('d-none');
+                paymentScreenshotContainer.classList.add('d-none');
+            }
+        }
+
+        typeField.addEventListener('change', togglePaymentFields);
+        togglePaymentFields();  // Initial check
+    });
+</script>
+
+{% endblock %}

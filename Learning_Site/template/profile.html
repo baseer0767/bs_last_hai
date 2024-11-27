@@ -1,0 +1,49 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h2>My Profile</h2>
+
+{% if user.profile_main.role == 'learner' %}
+    <h3>Subscribed Courses</h3>
+
+    <div class="row">
+        {% for course in courses %}
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h3 class="card-title">{{ course.title }}</h3>
+                    <p class="card-text">{{ course.description|truncatewords:20 }}</p>
+
+                    <!-- Course Videos -->
+                    <h5>Course Videos:</h5>
+
+                    <!-- First Video Display -->
+                    {% with course.contents.all|default_if_none:""|slice:":1" as first_video %}
+                    {% if first_video %}
+                    <div>
+                        <video width="100%" controls>
+                            <source src="{{ first_video.0.video.url }}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p class="mt-2">{{ first_video.0.title }}</p>
+                    </div>
+                    {% endif %}
+                    {% endwith %}
+                </div>
+
+                <div class="card-footer text-muted">
+                    <p>Instructor: {{ course.instructor }}</p>
+                    <p>Type: {{ course.get_course_type_display }}</p>
+                    <!-- Add a View Course button -->
+                    <a href="{% url 'course_detail' course.id %}" class="btn btn-primary btn-sm">View Course</a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <p class="text-center col-12">You have not subscribed to any courses yet.</p>
+        {% endfor %}
+    </div>
+{% else %}
+    <p>This page is only for learners.</p>
+{% endif %}
+{% endblock %}

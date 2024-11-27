@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% load static %}
+
+{% block title %}
+Course content
+{% endblock title %}
+
+{% block content %}
+
+  <form method="post" enctype="multipart/form-data" class="a_u_c">
+    {% csrf_token %}
+    {{ formset.management_form }}
+
+    {% for form in formset %}
+      <div class="form-row a_u_c">
+        {{ form.as_p }}
+      </div>
+    {% endfor %}
+
+    <button class="btn btn-primary my-2 a_u_c" type="submit">Submit Course</button>
+  </form>
+
+  {% if messages %}
+    <div class="messages a_u_c">
+      {% for message in messages %}
+        <div class="alert {{ message.tags }} a_u_c">
+          {{ message }}
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endblock content %}

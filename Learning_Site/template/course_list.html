@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'styles.css' %}">
+
+{% block title %}
+  Course List
+{% endblock %}
+
+{% block content %}
+<main class="container mt-5">
+  <h1 class="mb-4 text-center">
+    {% if selected_type == 'paid' %}
+      Paid Courses
+    {% elif selected_type == 'unpaid' %}
+      Unpaid Courses
+    {% else %}
+      All Courses
+    {% endif %}
+  </h1>
+
+  <div class="row">
+    {% for course in courses %}
+    <div class="col-md-4 mb-4">
+      <div class="card h-100">
+        <div class="card-body">
+          <h3 class="card-title">{{ course.title }}</h3>
+          <p class="card-text">{{ course.description|truncatewords:20 }}</p>
+          <div class="d-flex justify-content-between mb-3">
+            <a href="{% url 'course_detail' course.id %}" class="btn btn-primary btn-sm">View Course</a>
+            <a href="{% url 'subscribe' course.title course.course_type %}" class="btn btn-warning btn-sm">Subscribe</a>
+          </div>
+
+          <!-- Course Videos -->
+          <h5>Course Videos:</h5>
+
+          <!-- First Video Display -->
+          {% with course.contents.all|default_if_none:""|slice:":1" as first_video %}
+          {% if first_video %}
+          <div>
+            <video width="100%" controls>
+              <source src="{{ first_video.0.video.url }}" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p class="mt-2">{{ first_video.0.title }}</p>
+          </div>
+          {% else %}
+          <p>No videos available for this course.</p>
+          {% endif %}
+          {% endwith %}
+        </div>
+
+        <div class="card-footer text-muted">
+          <p>Instructor: {{ course.instructor }}</p>
+          <p>Type: {{ course.get_course_type_display }}</p>
+        </div>
+      </div>
+    </div>
+    {% empty %}
+    <p class="text-center col-12">No courses available in this category.</p>
+    {% endfor %}
+  </div>
+</main>
+{% endblock %}

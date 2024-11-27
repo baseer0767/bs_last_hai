@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="e_c_c">
+  <h1>Edit Course Content for "{{ course.title }}"</h1>
+
+  <!-- Display all content of the course -->
+  <table>
+      <thead>
+          <tr>
+              <th>Title</th>
+              <th>Order</th>
+              <th>Video</th>
+              <th>Actions</th>
+          </tr>
+      </thead>
+      <tbody>
+          {% for content in contents %}
+          <tr>
+              <form method="POST" enctype="multipart/form-data">
+                  {% csrf_token %}
+                  <td>
+                      <input type="text" name="title" value="{{ content.Contenttitle }}" class="form-control tile" required>
+                  </td>
+                  <td>
+                      <input type="number" name="order" value="{{ content.order }}" class="form-control num" required>
+                  </td>
+                  <td>
+                      {% if content.video %}
+                      <video class="custom-video-size" controls>
+                          <source src="{{ content.video.url }}" type="video/mp4">
+                          Your browser does not support the video tag.
+                      </video>
+                      {% endif %}
+                      <input type="file" name="video" class="form-control-file">
+                  </td>
+                  <td>
+                      <input type="hidden" name="content_id" value="{{ content.id }}">
+                      <button type="submit" name="action" value="update" class="btn1 btn-primary">Update</button>
+                      <button type="submit" name="action" value="delete" class="btn1   btn-danger">Delete</button>
+                  </td>
+              </form>
+          </tr>
+          {% empty %}
+          <tr>
+              <td colspan="4">No content available for this course.</td>
+          </tr>
+          {% endfor %}
+      </tbody>
+  </table>
+
+  <a href="{% url 'edit_course' course.id %}" class="btn btn-secondary mt-3">Back to Edit Course</a>
+</div>
+{% endblock content %}

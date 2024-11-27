@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <style>
+        /* General styles */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            /*background: linear-gradient(135deg, #6a1b9a, #8e44ad); /* Purple gradient background */
+            background: linear-gradient(135deg, #f5efe6 0%, #e3dbc5 100%);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Container styles */
+        .container {
+            background: #ffffff;
+            /*background: linear-gradient(135deg, #f5efe6 0%, #e3dbc5 100%);*/
+            color: #333;
+            max-width: 500px;
+            width: 90%;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Header section */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .decorative-icon {
+            font-size: 3em;
+            color: #6a1b9a; /* Match with background color */
+            margin-right: 10px;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin: 0;
+            color: #6a1b9a; /* Match with decorative icon */
+            font-weight: 700;
+        }
+
+        /* Form styles */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        label {
+            font-size: 0.9em;
+            font-weight: 500;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        textarea {
+            width: 100%;
+            padding: 12px 15px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+            background: #f9f9f9;
+            font-family: 'Roboto', Arial, sans-serif;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border: 1px solid #6a1b9a;
+            box-shadow: 0 0 5px rgba(106, 27, 154, 0.5);
+        }
+
+        /* Button styles */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        button {
+            width: 100%;
+            max-width: 200px;
+            padding: 12px 20px;
+            background: linear-gradient(135deg, #6a1b9a, #8e44ad);
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            color: #fff;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            font-weight: bold;
+            font-family: 'Roboto', Arial, sans-serif;
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #8e44ad, #9b59b6);
+        }
+
+        /* Error messages */
+        .errorlist {
+            color: red;
+            font-size: 0.9em;
+            text-align: left;
+            margin-top: -10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header with Book Icon and Heading -->
+        <div class="header">
+            <div class="decorative-icon">📚</div>
+            <h1>Registration</h1>
+        </div>
+        <!-- Form -->
+        <form method="post" novalidate>
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="form-group">
+                    {{ field.label_tag }}
+                    {{ field }}
+                    {% if field.errors %}
+                        <div class="errorlist">{{ field.errors }}</div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+            <div class="button-container">
+                <button type="submit">Register</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

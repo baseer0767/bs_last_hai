@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>Provide Feedback for {{ quiz.quiz.title }}</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Question</th>
+                <th>Feedback</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Video Quality -->
+            <tr>
+                <td>
+                    <label for="id_video_quality">How was the video quality?</label>
+                </td>
+                <td>
+                    <input type="radio" name="video_quality" value="1"> 1
+                    <input type="radio" name="video_quality" value="2"> 2
+                    <input type="radio" name="video_quality" value="3"> 3
+                    <input type="radio" name="video_quality" value="4"> 4
+                    <input type="radio" name="video_quality" value="5"> 5
+                    <input type="radio" name="video_quality" value="6"> 6
+                    <input type="radio" name="video_quality" value="7"> 7
+                    <input type="radio" name="video_quality" value="8"> 8
+                    <input type="radio" name="video_quality" value="9"> 9
+                    <input type="radio" name="video_quality" value="10"> 10
+                </td>
+            </tr>
+            <!-- Audio Quality -->
+            <tr>
+                <td>
+                    <label for="id_audio_quality">How was the audio quality?</label>
+                </td>
+                <td>
+                    <input type="radio" name="audio_quality" value="1"> 1
+                    <input type="radio" name="audio_quality" value="2"> 2
+                    <input type="radio" name="audio_quality" value="3"> 3
+                    <input type="radio" name="audio_quality" value="4"> 4
+                    <input type="radio" name="audio_quality" value="5"> 5
+                    <input type="radio" name="audio_quality" value="6"> 6
+                    <input type="radio" name="audio_quality" value="7"> 7
+                    <input type="radio" name="audio_quality" value="8"> 8
+                    <input type="radio" name="audio_quality" value="9"> 9
+                    <input type="radio" name="audio_quality" value="10"> 10
+                </td>
+            </tr>
+            <!-- Teaching Method -->
+            <tr>
+                <td>
+                    <label for="id_teaching_method">How was the teaching method?</label>
+                </td>
+                <td>
+                    <input type="radio" name="teaching_method" value="1"> 1
+                    <input type="radio" name="teaching_method" value="2"> 2
+                    <input type="radio" name="teaching_method" value="3"> 3
+                    <input type="radio" name="teaching_method" value="4"> 4
+                    <input type="radio" name="teaching_method" value="5"> 5
+                    <input type="radio" name="teaching_method" value="6"> 6
+                    <input type="radio" name="teaching_method" value="7"> 7
+                    <input type="radio" name="teaching_method" value="8"> 8
+                    <input type="radio" name="teaching_method" value="9"> 9
+                    <input type="radio" name="teaching_method" value="10"> 10
+                </td>
+            </tr>
+            <!-- Course Content -->
+            <tr>
+                <td>
+                    <label for="id_course_content">How was the course content?</label>
+                </td>
+                <td>
+                    <input type="radio" name="course_content" value="1"> 1
+                    <input type="radio" name="course_content" value="2"> 2
+                    <input type="radio" name="course_content" value="3"> 3
+                    <input type="radio" name="course_content" value="4"> 4
+                    <input type="radio" name="course_content" value="5"> 5
+                    <input type="radio" name="course_content" value="6"> 6
+                    <input type="radio" name="course_content" value="7"> 7
+                    <input type="radio" name="course_content" value="8"> 8
+                    <input type="radio" name="course_content" value="9"> 9
+                    <input type="radio" name="course_content" value="10"> 10
+                </td>
+            </tr>
+            <!-- Additional Feedback -->
+            <tr>
+                <td>
+                    <label for="id_feedback">Additional Feedback:</label>
+                </td>
+                <td>
+                    {{ form.feedback }}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button type="submit" class="btn btn-primary">Submit Feedback</button>
+</form>
+
+{% endblock content %}

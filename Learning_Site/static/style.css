@@ -1,0 +1,1195 @@
+/* layout page */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+  /* background-image: url('https://images.unsplash.com/photo-1498049860654-af1a5c566876?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8b25saW5lJTIwbGVhcm5pbmclMjB3ZWJzaXRlfGVufDB8fDB8fHww');
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat; */
+
+
+}
+
+/* Navbar Styles */ 
+.navbar {
+  border-bottom: 2px solid #ddd;
+  background-color:  white;
+}
+
+
+
+.navbar .navbar-toggler-icon {
+  color: white;
+}
+
+#navbar-nav {
+  justify-content: space-between;
+}
+
+
+.navbar .navbar-nav .nav-link {
+  color: #6363cfb6 ;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.navbar .navbar-nav .nav-link:hover {
+  color: #131414;
+}
+
+.navbar .dropdown-menu {
+  background-color: #17a2b8;
+}
+
+.navbar .dropdown-menu .dropdown-item {
+  color: #fff;
+}
+
+.navbar .dropdown-menu .dropdown-item:hover {
+  background-color: #138496;
+}
+
+/* Logo Styles */
+.logo-container {
+  display: flex;
+  align-items: center;
+  mix-blend-mode: multiply;
+  padding: none;
+  margin: none;
+}
+
+.logo {
+  max-height: 100px;
+}
+
+/* Center the search form */
+.navbar .navbar-collapse {
+  display: flex;
+  justify-content: center;
+  padding-left: 35pt;
+}
+
+/* Styling the form itself */
+.form-inline {
+  display: flex;
+  margin-left: 20px;
+  width: 70%;
+  /* Controls the width of the search form */
+  justify-content: space-between;
+  /* Ensures even spacing between input and button */
+}
+
+.form-inline .btn-outline-success {
+  margin-right: 30px;
+}
+
+/* Ensures the input stretches */
+.form-control {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+
+
+.btn-outline-success {
+  border-color: #007bff;
+  color: whitesmoke;
+  background-color: #007bff;
+  font-size: 1.5rem;
+
+}
+
+.btn-outline-success:hover {
+  background-color: #0056b3;
+  color: white;
+}
+
+/* Main Content */
+.container-fluid {
+  padding-bottom: 15pt;
+}
+
+h5 {
+  font-size: 1.5rem;
+  font-weight: bold;
+
+}
+
+p {
+  font-size: 1rem;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: white;
+  color:black;
+  padding: none;
+}
+
+.footer .text-start h5 {
+  font-size: 1.8rem;
+  padding-top: 20px;
+  padding-left: 35px;
+  font-weight: bold;
+}
+
+.footer ul {
+  padding: 0;
+  list-style: none;
+}
+
+.footer ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+.footer ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .navbar-nav {
+    text-align: center;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .form-inline {
+    width: 100%;
+  }
+
+  .form-control {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .logo-container {
+    justify-content: center;
+  }
+
+  .logo {
+    max-height: 40px;
+  }
+}
+
+/* Additional custom styles */
+.navbar-nav .nav-item {
+  margin-right: 15px;
+}
+
+.nav-item a {
+  color: #fff;
+}
+
+.nav-item a:hover {
+  color: white;
+}
+
+footer p.mb-0 {
+  font-size: 0.9rem;
+}
+
+footer .pp {
+  color: rgba(103, 107, 108, 0.709);
+  padding-left: 60px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  font-family: cursive;
+}
+
+/* main page */
+
+/* main page */
+
+/* General Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: rgb(191, 191, 191);
+  margin: 0;
+  padding: 0;
+}
+
+.ma_p {
+  background-color: rgb(199, 199, 199);
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.ma_p h1.text-center {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #343a40;
+  margin: 0;
+}
+
+.ma_p .d-flex {
+  display: flex;
+}
+
+.ma_p .flex-grow-1 {
+  flex-grow: 1;
+}
+
+.ma_p .btn {
+  font-size: 0.9rem;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.ma_p .btn-primary {
+  background-color: #007bff;
+  color: white;
+  border: none;
+}
+
+.ma_p .btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.ma_p .btn-warning {
+  background-color: #ffc107;
+  color: #212529;
+  border: none;
+}
+
+.ma_p .btn-warning:hover {
+  background-color: #e0a800;
+}
+
+/* Course Cards */
+.ma_p .card {
+  border: 1px solid black;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.ma_p .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.ma_p .card-body {
+  padding: 15px;
+  height: 350px;
+}
+
+.ma_p .card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.ma_p .card-text {
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+/* Video Display */
+.ma_p video {
+  width: 100%;
+  height: 200px;
+  border-radius: 8px;
+  border: 2px solid #dee2e6;
+  margin-top: 10px;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+/* Card Footer */
+.ma_p .card-footer {
+  background-color: #b0b0c0ee;
+  color: black;
+  padding: 10px 15px;
+  border-top: 1px solid #dee2e6;
+  border-radius: 0 0 10px 10px;
+}
+
+.ma_p .card-footer p {
+  font-size: 1.3rem;
+}
+
+/* Empty State Message */
+.ma_p p.text-center {
+  font-size: 1rem;
+  color: #6c757d;
+  margin-top: 20px;
+}
+
+
+
+/* course detail page */
+/* Global Styles */
+.c_d {
+  font-family: Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Main Video Styling */
+.c_d video.main-video {
+  width: 80%;
+  max-width: 800px;
+  height: 10px;
+  margin: 20px auto;
+  display: block;
+}
+
+/* Horizontal Layout for Additional Content */
+.c_d .additional-content {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.c_d .additional-content .content-item {
+  width: 30%;
+  /* Control the width of each content item */
+  text-align: center;
+  /* Center text and links inside content items */
+}
+
+.c_d .card {
+  background-color: inherit;
+  padding: 20px;
+}
+
+.c_d .additional-content .content-item video {
+  width: 100%;
+  /* Make sure smaller videos fit their container */
+  max-width: 300px;
+  /* Max width for smaller videos */
+  margin: 0 auto;
+  /* Center the smaller videos */
+}
+
+
+
+/* Centering the Buttons */
+.c_d .btn-info,
+.c_d .btn-secondary {
+  background-color: #007bff;
+  border-color: #007bff;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 10px auto; /* This centers the buttons horizontally */
+  width: auto; /* Adjust the width to fit the content */
+}
+
+/* Hover Effects */
+.c_d .btn-info:hover,
+.c_d .btn-secondary:hover {
+  background-color: #0056b3; /* Darker color on hover */
+  color: white;
+  border-color: #0056b3; /* Darker border color on hover */
+}
+
+
+/* Course Contents List Styling */
+.c_d .list-group-item {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+/* Styling for Course Title */
+.c_d h1 {
+  font-size: 2rem;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+.c_d h3 {
+  font-weight: bold;
+  padding: 15px;
+  font-size: 2.5rem;
+}
+
+/* Styling for Course Description */
+.c_d p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+/* Additional Resource Section Styling */
+.c_d .mt-2 {
+  margin-top: 20px;
+}
+
+/* Responsive Layout for Smaller Screens */
+@media (max-width: 768px) {
+  .c_d video.main-video {
+    width: 100%;
+    /* Make the main video full width on smaller screens */
+    max-width: none;
+  }
+
+  .c_d .additional-content {
+    flex-direction: column;
+    /* Stack content vertically on small screens */
+  }
+
+  .c_d .additional-content .content-item {
+    width: 100%;
+    /* Each content item takes full width on smaller screens */
+    margin-bottom: 15px;
+    /* Add space between items */
+  }
+
+  /* Centering the buttons in smaller screens */
+  .c_d .content-item {
+    justify-content: center; /* Ensure buttons are centered in smaller screens */
+  }
+
+}
+
+
+/* Subscribe Page Styles (sub class) */
+.sub {
+  max-width: 800px;
+  margin: 50px auto;
+  /* Centers the container horizontally and adds top margin */
+  padding: 30px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #774a4a;
+  /* Adds border around the container */
+}
+
+.sub .container {
+  min-width: 650px;
+}
+
+.sub .mb-3 input,
+.sub .mb-3 select,
+.sub .mb-3 textarea {
+  border: 1px solid #ccc;
+  /* Default border */
+  transition: border-color 0.9s ease;
+  /* Smooth transition */
+}
+
+.sub .mb-3:active input,
+.sub .mb-3:active select,
+.sub .mb-3:active textarea {
+  border-color: #062b53;
+  /* Change to your desired color on hover */
+}
+
+
+
+.sub h2 {
+  color: #333;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.sub .form-control {
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12), 0 0 8px rgba(0, 0, 0, 0.08);
+}
+
+.sub .form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.sub .btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 auto;
+  /* Centers the button horizontally */
+}
+
+.sub .btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #004085;
+}
+
+.sub .text-danger {
+  color: #dc3545;
+  font-size: 0.9rem;
+  margin-top: -10px;
+}
+
+.sub .form-group {
+  margin-bottom: 20px;
+}
+
+.sub .form-group label {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.sub .d-none {
+  display: none;
+}
+
+
+
+/* Course Creator Page Styles (cr_c class) */
+.cr_c {
+  max-width: 900px;
+  /* Matching the width of .sub */
+  margin: 50px auto;
+  /* Centers the container horizontally and adds top margin */
+  padding: 30px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #774a4a;
+  /* Adds border around the container */
+}
+
+.cr_c .btn-primary {
+  background-color: rgb(53, 192, 185);
+  border-color: #9abee6;
+  padding: 10px 20px;
+  text-align: left;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cr_c .btn-primary:hover {
+  background-color: #0fe4dd;
+  border-color: #004085;
+}
+
+.cr_c .btn-success {
+  background-color: #007bff;
+  border-color: #007bff;
+  padding: 10px 20px;
+  text-align: left;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cr_c .btn-success:hover {
+  background-color: #0056b3;
+  border-color: #004085;
+}
+
+.cr_c .text-center {
+  text-align: center;
+  /* Centers the content horizontally */
+}
+
+.cr_c .float-start {
+  float: left;
+  /* Aligns the button to the left */
+}
+
+.cr_c .form-control {
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12), 0 0 8px rgba(0, 0, 0, 0.08);
+  resize: none;
+  /* Makes input fields non-resizable */
+}
+
+.cr_c .form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.cr_c .text-danger {
+  color: #dc3545;
+  font-size: 0.9rem;
+  margin-top: -10px;
+}
+
+.cr_c .form-group {
+  margin-bottom: 20px;
+}
+
+.cr_c .form-group label {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.cr_c .mb-3 {
+  margin-bottom: 15px;
+}
+
+.cr_c .mb-3 input,
+.cr_c .mb-3 select,
+.cr_c .mb-3 textarea {
+  border: 1px solid #ccc;
+  /* Default border */
+  transition: border-color 0.9s ease;
+  /* Smooth transition */
+}
+
+.cr_c .mb-3:active input,
+.cr_c .mb-3:active select,
+.cr_c .mb-3:active textarea {
+  border-color: #095bb1;
+  /* Change border color on active */
+}
+
+.cr_c .d-none {
+  display: none;
+}
+
+
+/* course edit */
+
+.e_c {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #774a4a;
+  /* Adds border around the container */
+}
+
+.e_c h1 {
+  color: #333;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.e_c .form-label {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.e_c .form-control {
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 1rem;
+  resize: none;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12), 0 0 8px rgba(0, 0, 0, 0.08);
+}
+
+.e_c .form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.e_c .btn-primary {
+  background-color: rgb(53, 192, 185);
+  border-color: #9abee6;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: inline-flexbox;
+}
+
+.e_c .btn-primary:hover {
+  background-color: #0fe4dd;
+  border-color: #004085;
+}
+
+.e_c .btn-secondary {
+  background-color: #007bff;
+  border-color: #007bff;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-left: auto;
+  margin-right: auto;
+  display: table;
+}
+
+.e_c .btn-secondary:hover {
+  background-color: #0056b3;
+  border-color: #004085;
+}
+
+.e_c .mt-3 {
+  margin-top: 20px;
+}
+
+.e_c .text-danger {
+  color: #dc3545;
+  font-size: 0.9rem;
+  margin-top: -10px;
+}
+
+.e_c .form-group {
+  margin-bottom: 20px;
+}
+
+.e_c .d-none {
+  display: none;
+}
+
+
+/* edit course content */
+
+.e_c_c {
+  max-width: 1100px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #774a4a;
+  /* Adds border around the container */
+}
+
+.e_c_c h1 {
+  color: #333;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.e_c_c video {
+  width: 400px !important;
+  height: 250px !important;
+}
+
+.e_c_c table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.e_c_c th,
+.e_c_c td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.e_c_c th {
+  background-color: #f0f0f0;
+  text-align: center;
+}
+
+.e_c_c input[type="text"],
+.e_c_c input[type="number"],
+.e_c_c input[type="file"],
+.e_c_c textarea {
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12), 0 0 8px rgba(0, 0, 0, 0.08);
+}
+
+
+.tile {
+  min-width: 50px;
+  /* Set a reasonable minimum width */
+  width: auto;
+  /* Allow the width to adapt */
+}
+
+
+.e_c_c input[type="text"]:focus,
+.e_c_c input[type="number"]:focus,
+.e_c_c input[type="file"]:focus,
+.e_c_c textarea:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.e_c_c .btn {
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.e_c_c .btn-primary,
+.e_c_c .btn-danger {
+  color: black;
+  /* Set the text color to black */
+  border: 2px solid #000;
+  /* Add a border */
+  box-shadow: none;
+  /* Remove box shadow */
+  padding: 10px 20px;
+  /* Same padding for both buttons */
+  font-size: 1.1rem;
+  /* Same font size for both buttons */
+  display: inline-block;
+  /* Ensures they align correctly */
+  width: 100px;
+  /* Makes sure buttons are not stretched or shrink */
+  text-align: center;
+  /* Ensures the text is centered */
+  border-radius: 5px;
+  /* Rounded borders */
+}
+
+.e_c_c .btn-primary {
+  background-color: #00ff48;
+  /* Green background */
+}
+
+.e_c_c .btn-primary:hover {
+  background-color: #04b40a;
+  /* Darker green on hover */
+}
+
+.e_c_c .btn-danger {
+  background-color: #ee4354;
+  /* Red background */
+}
+
+.e_c_c .btn-danger:hover {
+  background-color: #c82333;
+  /* Darker red on hover */
+}
+
+.e_c_c .btn-primary {
+  margin-bottom: 20px;
+  /* Add a gap between the Update and Delete buttons */
+}
+
+
+
+.e_c_c .btn-secondary {
+  background-color: #007bff;
+  border-color: #007bff;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  border-radius: 5px;
+}
+
+.e_c_c .btn-secondary:hover {
+  background-color: #0056b3;
+  border-color: #004085;
+}
+
+.e_c_c .mt-3 {
+  margin-top: 20px;
+}
+
+
+
+/* create quiz */
+
+/* Quiz Creation Page Styles (.cr_q class) */
+.cr_q {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #774a4a;
+}
+
+.cr_q h1 {
+  display: flex;
+  justify-content: center;
+  /* Centers the heading horizontally */
+  align-items: center;
+  /* Centers the heading vertically if needed */
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #333;
+  line-height: 1.2;
+}
+
+.cr_q h1 span {
+  color: #333;
+}
+
+
+
+/* Buttons */
+.cr_q .btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-left: auto;
+  margin-right: auto;
+  display: table;
+}
+
+.cr_q .btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #004085;
+}
+
+
+/* Form Controls */
+.cr_q .form-control {
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12), 0 0 8px rgba(0, 0, 0, 0.08);
+}
+
+.cr_q .form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Form Group and Labels */
+.cr_q .form-group {
+  margin-bottom: 20px;
+}
+
+.cr_q .form-group label {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* Card Styling for Questions */
+.cr_q .card {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.cr_q .card-body {
+  padding: 15px;
+}
+
+/* Miscellaneous */
+.cr_q .text-danger {
+  color: #dc3545;
+  font-size: 0.9rem;
+  margin-top: -10px;
+}
+
+
+/* add content page */
+
+.a_u_c {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid black;
+}
+
+.a_u_c .container {
+  min-width: 650px;
+}
+
+.a_u_c .form-group {
+  margin-bottom: 20px;
+}
+
+.a_u_c .form-group label {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.a_u_c .mb-3 input,
+.a_u_c .mb-3 select,
+.a_u_c .mb-3 textarea,
+.a_u_c .form-control {
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12), 0 0 8px rgba(0, 0, 0, 0.08);
+  transition: border-color 0.9s ease;
+}
+
+.a_u_c .mb-3:active input,
+.a_u_c .mb-3:active select,
+.a_u_c .mb-3:active textarea,
+.a_u_c .form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.a_u_c .btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 auto;
+}
+
+.a_u_c .btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #004085;
+}
+
+.a_u_c .text-danger {
+  color: #dc3545;
+  font-size: 0.9rem;
+  margin-top: -10px;
+}
+
+.a_u_c .messages .alert {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.a_u_c .d-none {
+  display: none;
+}
+
+
+/* login page */
+
+
+.l_p {
+  max-width: 800px;
+  margin: 50px auto;
+  /* Centers the container horizontally and adds top margin */
+  padding: 30px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #774a4a;
+  /* Adds border around the container */
+}
+
+.l_p .container {
+  min-width: 650px;
+}
+
+.l_p .mb-3 input,
+.l_p .mb-3 select,
+.l_p .mb-3 textarea {
+  border: 1px solid #ccc;
+  /* Default border */
+  transition: border-color 0.9s ease;
+  /* Smooth transition */
+}
+
+.l_p .mb-3:active input,
+.l_p .mb-3:active select,
+.l_p .mb-3:active textarea {
+  border-color: #062b53;
+  /* Change to your desired color on hover */
+}
+
+.l_p h2 {
+  color: #333;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.l_p .form-control {
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12), 0 0 8px rgba(0, 0, 0, 0.08);
+}
+
+.l_p .form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.l_p .btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 auto;
+  /* Centers the button horizontally */
+}
+
+.l_p .btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #004085;
+}
+
+.l_p .text-danger {
+  color: #dc3545;
+  font-size: 0.9rem;
+  margin-top: -10px;
+}
+
+.l_p .form-group {
+  margin-bottom: 20px;
+}
+
+.l_p .form-group label {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.l_p .d-none {
+  display: none;
+}

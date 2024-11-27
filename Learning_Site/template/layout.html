@@ -1,0 +1,123 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{% block title %}Learning Site{% endblock %}</title>
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+
+  <!-- Bootstrap JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg  px-4">
+      <div class="logo-container">
+        <img src="{% static 'logo/logo4.png' %}" alt="Logo" class="logo ">
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="{% url 'home' %}">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Categories
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{% url 'main:main_page' %}">Courses</a></li>
+              <li><a class="dropdown-item" href="{% url 'filter_courses' %}?type=paid">Paid Courses</a></li>
+              <li><a class="dropdown-item" href="{% url 'filter_courses' %}?type=unpaid">Unpaid Courses</a></li>
+              <li><a class="dropdown-item" href="{% url 'main:user_profile' %}">Profile</a></li>
+
+              <li><hr class="dropdown-divider"></li>
+            </ul>
+          </li>
+        </ul>
+        
+        <!-- Updated Search Bar -->
+        <form class="d-flex mb-4" role="search" method="get">
+          <input
+            class="form-control me-2"
+            type="search"
+            name="q"
+            placeholder="Search for courses"
+            aria-label="Search"
+            value="{{ query|default:'' }}"
+          />
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+
+        <!-- User options -->
+        <ul class="navbar-nav ">
+          <li class="nav-item"><a class="nav-link" href="{% url 'authentication:login' %}">Signup</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'authentication:register' %}">Login</a></li>
+          <li>
+            <a class="dropdown-item" href="{% url 'main:user_profile' %}">
+              <i class="fas fa-user"></i> Profile
+            </a>
+          </li>          
+          <form action="{% url 'authentication:logout' %}" method="POST">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-link nav-link">Logout</button>
+        </form>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  {% block content %}
+  {% endblock %}
+
+  {% block subscribe_form %}
+  {% endblock %}
+
+  {% block course_type %}
+  {% endblock %}
+
+  {% block body %}
+  {% endblock %}
+
+  <!-- Footer -->
+  <footer class="footer ">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 text-start">
+          <h5 class="text-dark">EduLearn</h5>
+          <p class="pp">Empowering your learning journey with the best resources.</p>
+        </div>
+        <div class="col-12 text-center">
+          <ul class="list-inline">
+            <li class="list-inline-item"><a href="#" class="text-dark">About Us</a></li>
+            <li class="list-inline-item"><a href="#" class="text-dark">Contact Us</a></li>
+            <li class="list-inline-item"><a href="#" class="text-dark">Privacy Policy</a></li>
+          </ul>
+          <p class="mb-0 text-dark">&copy; 2024 Learning Site. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

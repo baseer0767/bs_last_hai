@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Details - Admin Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Admin Dashboard</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'authentication:list_all_user' %}">Back to All Users</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 class="text-center">User Details</h1>
+        <div class="mt-4">
+            <h3>Username: {{ user_profile.user.username }}</h3>
+            <p><strong>Email:</strong> {{ user_profile.user.email }}</p>
+            <p><strong>Role:</strong> {{ user_profile.role|title }}</p>
+            <p><strong>City:</strong> {{ user_profile.city }}</p>
+            <p><strong>Additional Info:</strong> {{ user_profile.additional_info }}</p>
+
+            <!-- Display courses based on role -->
+            <h4 class="mt-4">Courses:</h4>
+            {% if courses %}
+                <ul>
+                    {% for course in courses %}
+                        <li>{{ course.title }}
+                            {% if user_profile.role == 'instructor' and request.user.is_superuser %}
+                                <!-- Delete button for instructors' courses, visible only to admins -->
+                                <form method="POST" action="{% url 'authentication:delete_course' course.id %}" style="display:inline;">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                </form>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>No courses found.</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
